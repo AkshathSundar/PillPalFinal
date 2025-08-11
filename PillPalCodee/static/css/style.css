@@ -1,0 +1,383 @@
+:root {
+    --primary-color: #ff6b9d;
+    --success-color: #52c4a0;
+    --warning-color: #ffd93d;
+    --danger-color: #ff6b9d;
+    --light-gray: #fef7ff;
+    --dark-gray: #9b7aa0;
+    --soft-purple: #d4c5f9;
+    --mint-green: #a8f0e6;
+    --peachy-pink: #ffb3d1;
+    --lavender: #e8d5ff;
+    --cream: #fff8f0;
+}
+
+body {
+    font-family: 'Quicksand', 'Comic Sans MS', cursive, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    background: linear-gradient(135deg, var(--light-gray) 0%, #f0e8ff 50%, #fff0f5 100%);
+    min-height: 100vh;
+}
+
+/* Enhanced readability with cute vibes */
+.card {
+    border-radius: 25px;
+    border: 3px solid var(--soft-purple);
+    background: linear-gradient(135deg, #ffffff 0%, #fef9ff 100%);
+    box-shadow: 0 10px 30px rgba(212, 197, 249, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--peachy-pink), var(--mint-green), var(--warning-color), var(--soft-purple));
+}
+
+.card-header {
+    border-radius: 22px 22px 0 0 !important;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--lavender) 0%, #ffeef7 100%);
+    border-bottom: 3px solid var(--soft-purple);
+    color: #6b46c1;
+    text-shadow: 1px 1px 2px rgba(107, 70, 193, 0.1);
+}
+
+/* Large, accessible buttons with kawaii vibes */
+.btn {
+    border-radius: 20px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-width: 3px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-transform: none;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #ff8fab);
+    border-color: var(--primary-color);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--success-color), #7de3c4);
+    border-color: var(--success-color);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--warning-color), #ffe066);
+    border-color: var(--warning-color);
+    color: #8b5a00;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--danger-color), #ff8fab);
+    border-color: var(--danger-color);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-lg {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+}
+
+/* Form controls with kawaii styling */
+.form-control, .form-select {
+    border-radius: 15px;
+    border: 3px solid var(--soft-purple);
+    font-size: 1.1rem;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #fef9ff 100%);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 157, 0.25);
+    background: #ffffff;
+    transform: scale(1.02);
+}
+
+.form-control-lg {
+    font-size: 1.25rem;
+    padding: 15px 20px;
+    border-radius: 18px;
+}
+
+/* High contrast labels with cute colors */
+.form-label {
+    color: #6b46c1;
+    margin-bottom: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Navigation improvements with pastel theme */
+.navbar-brand {
+    font-size: 1.8rem !important;
+    font-weight: 800;
+    background: linear-gradient(45deg, var(--primary-color), var(--soft-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.navbar-nav .nav-link {
+    padding: 10px 15px !important;
+    margin: 0 5px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: #6b46c1 !important;
+}
+
+.navbar-nav .nav-link:hover {
+    background: linear-gradient(135deg, var(--lavender), var(--peachy-pink));
+    color: #6b46c1 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 197, 249, 0.4);
+}
+
+/* Alert styling with kawaii colors */
+.alert {
+    border-radius: 20px;
+    border-width: 3px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.alert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    opacity: 0.7;
+}
+
+.alert-warning::before {
+    background: linear-gradient(90deg, var(--warning-color), #ffe066);
+}
+
+.alert-success::before {
+    background: linear-gradient(90deg, var(--success-color), #7de3c4);
+}
+
+.alert-danger::before {
+    background: linear-gradient(90deg, var(--danger-color), #ff8fab);
+}
+
+/* Card improvements for medication reminders */
+.card.border-warning {
+    border-color: var(--warning-color) !important;
+    background: linear-gradient(135deg, #fff8e1 0%, #fffbf0 100%);
+}
+
+.card.border-success {
+    border-color: var(--success-color) !important;
+    background: linear-gradient(135deg, #bfd1bf 0%, #d6ecdc 100%);
+}
+
+/* Badge styling with cute rounded design */
+.badge {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.badge-primary {
+    background: linear-gradient(135deg, var(--primary-color), #ff8fab);
+}
+
+.badge-success {
+    background: linear-gradient(135deg, var(--success-color), #7de3c4);
+}
+
+.badge-warning {
+    background: linear-gradient(135deg, var(--warning-color), #ffe066);
+    color: #8b5a00;
+}
+
+/* Audio controls styling */
+audio {
+    height: 40px;
+    border-radius: 20px;
+    border: 3px solid var(--soft-purple);
+    background: linear-gradient(135deg, #ffffff 0%, #fef9ff 100%);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5rem !important;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 1.1rem !important;
+    }
+    
+    .btn-lg {
+        font-size: 1.1rem;
+        padding: 12px 24px;
+    }
+    
+    .display-6 {
+        font-size: 2rem;
+    }
+}
+
+/* Focus indicators for accessibility with cute colors */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    outline: 3px solid var(--warning-color);
+    outline-offset: 3px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .card {
+        border-width: 4px;
+        border-color: #6b46c1;
+    }
+    
+    .btn {
+        border-width: 4px;
+    }
+    
+    .form-control, .form-select {
+        border-width: 4px;
+        border-color: #6b46c1;
+    }
+}
+
+/* Large touch targets */
+.card-body .btn,
+.card-body audio {
+    min-height: 48px;
+}
+
+/* Improved spacing with cute proportions */
+.card-body {
+    padding: 2rem;
+    background: linear-gradient(135deg, #b8ebff 0%, #fcf6fd 100%);
+}
+
+.mb-4 {
+    margin-bottom: 2rem !important;
+}
+
+.mt-4 {
+    margin-top: 2rem !important;
+}
+
+/* Icon sizing with cute colors */
+.fas, .far {
+    width: 1.2em;
+    text-align: center;
+}
+
+.text-primary { color: var(--primary-color) !important; }
+.text-success { color: var(--success-color) !important; }
+.text-warning { color: #8b5a00 !important; }
+.text-danger { color: var(--danger-color) !important; }
+
+/* Additional cute elements */
+.btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(135deg, var(--primary-color), #ff8fab);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* Cute scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--soft-purple), var(--peachy-pink));
+    border-radius: 10px;
+    border: 2px solid var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--soft-purple));
+}
+
+/* Floating animation for cute effect */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+.card:hover {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Subtle pulse animation for buttons */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 107, 157, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 107, 157, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 107, 157, 0); }
+}
+
+.btn-primary:hover {
+    animation: pulse 2s infinite;
+}

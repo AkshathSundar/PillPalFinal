@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Voice - PillPal{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg">
+            <div class="card-header bg-info text-white">
+                <h3 class="card-title mb-0">
+                    <i class="fas fa-microphone me-2"></i>Upload Voice Recording
+                </h3>
+            </div>
+            <div class="card-body p-4">
+                <div class="alert alert-info fs-6 mb-4">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    <strong>Tip:</strong> Record a familiar voice saying something like "Time to take your medication!" 
+                    or "Don't forget your pills!" This will make reminders more comforting and recognizable.
+                </div>
+
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-4">
+                        <label for="name" class="form-label fs-5 fw-semibold">Recording Name</label>
+                        <input type="text" class="form-control form-control-lg" id="name" 
+                               name="name" placeholder="e.g., Mom's Voice, Dr. Smith" required>
+                        <div class="form-text fs-6">Give this recording a memorable name</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="voice_file" class="form-label fs-5 fw-semibold">Voice File</label>
+                        <input type="file" class="form-control form-control-lg" id="voice_file" 
+                               name="voice_file" accept=".mp3,.wav,.ogg,.m4a" required>
+                        <div class="form-text fs-6">
+                            Supported formats: MP3, WAV, OGG, M4A (Max size: 16MB)
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-info btn-lg">
+                            <i class="fas fa-upload me-2"></i>Upload Voice Recording
+                        </button>
+                        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary btn-lg">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+                        </a>
+                    </div>
+                </form>
+
+                <div class="mt-4">
+                    <h5>Recording Tips:</h5>
+                    <ul class="fs-6 text-muted">
+                        <li>Speak clearly and at a comfortable volume</li>
+                        <li>Keep messages short and encouraging</li>
+                        <li>Record in a quiet environment</li>
+                        <li>Family members' voices work great for motivation!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

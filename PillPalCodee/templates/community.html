@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Community{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h2 class="mb-4">🧓 Med-takers Forum</h2>
+    <p class="mb-4">Welcome! Share kind thoughts or messages with fellow med-takers below 💬</p>
+
+    <form method="POST" class="mb-5">
+        <div class="mb-3">
+            <label for="message" class="form-label fw-semibold">Your Message</label>
+            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Hi, I'm sending warm wishes to all! ☀️" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Post Message</button>
+        <p class="text-muted mt-2">Please be kind and respectful 💙</p>
+    </form>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">💌 Today's Positive Messages</h5>
+            <ul class="list-group list-group-flush">
+                <!-- Sample static messages -->
+                <li class="list-group-item">
+                    <span class="me-2">👵</span>
+                    <strong>Grace:</strong> Hope everyone has a cozy day! 🧣
+                </li>
+                <li class="list-group-item">
+                    <span class="me-2">👴</span>
+                    <strong>Arthur:</strong> Drink water, take your meds, and smile. 😊
+                </li>
+                <li class="list-group-item">
+                    <span class="me-2">🧓</span>
+                    <strong>Mina:</strong> Thinking of you lovely souls extra hard! stay strong! 💖
+                </li>
+
+                <!-- Loop through user-submitted messages -->
+                {% for msg in user_messages %}
+                <li class="list-group-item">
+                    <span class="me-2">👵</span>
+                    <strong>{{ msg['username'] }}:</strong> {{ msg['message'] }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

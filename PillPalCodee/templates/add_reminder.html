@@ -1,0 +1,64 @@
+add reminder 
+
+{% extends "base.html" %}
+
+{% block title %}Add Reminder - PillPal{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-purple">
+                <h3 class="card-title mb-0">
+                    <i class="fas fa-plus me-2"></i>Add New Medication Reminder
+                </h3>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST">
+                    <div class="mb-4">
+                        <label for="medication_name" class="form-label fs-5 fw-semibold">Medication Name</label>
+                        <input type="text" class="form-control form-control-lg" id="medication_name" 
+                               name="medication_name" placeholder="e.g., Metformin, Aspirin" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="dosage" class="form-label fs-5 fw-semibold">Dosage Instructions</label>
+                        <input type="text" class="form-control form-control-lg" id="dosage" 
+                               name="dosage" placeholder="e.g., Take 2 tablets, 500mg" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="time" class="form-label fs-5 fw-semibold">Reminder Time</label>
+                        <input type="time" class="form-control form-control-lg" id="time" name="time" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="voice_file" class="form-label fs-5 fw-semibold">Voice Recording (Optional)</label>
+                        <select class="form-select form-select-lg" id="voice_file" name="voice_file">
+                            <option value="">No voice recording</option>
+                            {% for voice_file in voice_files %}
+                                <option value="{{ voice_file.id }}">{{ voice_file.name }}</option>
+                            {% endfor %}
+                        </select>
+                        {% if not voice_files %}
+                            <div class="form-text fs-6">
+                                <i class="fas fa-info-circle me-1"></i>
+                                <a href="{{ url_for('upload_voice') }}">Upload a voice recording</a> to make reminders more personal.
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-plus me-2"></i>Add Reminder
+                        </button>
+                        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary btn-lg">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
